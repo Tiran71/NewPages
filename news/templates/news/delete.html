@@ -1,0 +1,18 @@
+{% extends 'main/temp.html' %}
+
+{% block title %}Удаление{% endblock %}
+
+{% block head %}Удалить статью{% endblock %}
+
+{% block content %}
+  <div align = "center">   
+   <form method="post">
+   <h4><font color="red">Подтвердите удаление статьи  "{{object.title}}"</font></h4> 
+    {% csrf_token %}
+    <br> 
+    <button  type="submit">Удалить</button>       
+   </form>
+   <br>
+   <a href="{% url 'detail' object.id %}"><button>Отменить</button></a>   
+  </div>  
+{% endblock %}
